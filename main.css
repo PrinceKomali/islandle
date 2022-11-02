@@ -6,6 +6,12 @@
     margin-bottom: 2px;
     font-size: 12px;
 }
+.flag {
+    display: inline;
+    vertical-align: -2px;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
+}
 .h2p {
     z-index:10;
     display: none;
@@ -792,7 +798,7 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace
 }
 
-footer a {
+footer a, .map_link {
     text-decoration: underline
 }
 
