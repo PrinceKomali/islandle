@@ -9,8 +9,8 @@ const ISLANDS = [
         claims: {
             countries: [ "us" ],
             type: "Administered",
-            territory: false
-        }
+        },
+        territory: false
     },
     {
         name: "Johnston Atoll",
@@ -21,9 +21,9 @@ const ISLANDS = [
         long: -169.5336,
         claims: {
             countries: [ "us" ],
-            type: "Administered",
-            territory: false
-        }
+            type: "Administered"
+        },
+        territory: false
     },
     {
         name: "North Island",
@@ -34,9 +34,9 @@ const ISLANDS = [
         long: 175.6024,
         claims: {
             countries: [ "nz" ],
-            type: "Part",
-            territory: false
-        }
+            type: "Part"
+        },
+        territory: false
     },
     {
         name: "Sulawesi",
@@ -47,9 +47,9 @@ const ISLANDS = [
         long: 120.5279,
         claims: {
             countries: [" id" ],
-            type: "Part",
-            territory: false
-        }
+            type: "Part"
+        },
+        territory: false
     },
     {
         name: "Tristan da Cunha",
@@ -60,9 +60,9 @@ const ISLANDS = [
         long: -12.2777,
         claims: {
             countries: [ "gb" ],
-            type: "Territory",
-            territory: false
-        }
+            type: "Territory"
+        },
+        territory: false
     }
 ];
 

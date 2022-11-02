@@ -5,7 +5,6 @@ let autocomplete = document.querySelector(".autocomplete");
 
 let filtered = [];
 let filtered_str = "";
-let done = false;
 
 guess_input.addEventListener("keydown", k => {
     if(k.key == "Tab") {
@@ -24,35 +23,15 @@ function submit_guess() {
     let query = guess_input.value;
     guess_input.value = "";
     let ret = Game.guess(query);
-    // TODO: handle errors
-
+    if(ret == Game.NOT_FOUND) return autocomplete.innerHTML = "Island not found!";
+    if(ret == Game.ALREADY_GUESSED) return autocomplete.innerHTML = "You've already guessed this!";
     let guesses_used_up = [...document.querySelectorAll(".guess")].filter(x=>x.innerText == "").length == 0;
     if(ret == Game.CORRECT || guesses_used_up) {
-        done = true;
-        guess_btn.style.display = "none";
-        share_btn.style.display = "block";
-        guess_input.readOnly = true;
-        guess_input.placeholder = ret == Game.CORRECT ? "You got it!" : "Maybe next time!";
-        let {island} = Game;
-        setTimeout(_=>{
-            let i = 0;
-            autocomplete.innerHTML = '';
-            let message = [
-                `Answer: <b>${island.name}`,
-                `${island.claims.type} ${type_grammar(island.claims.type)}`
-            
-            ];
-
-            let _int = setInterval(_=> {
-                if(message.length < 1) return clearInterval(_int);
-                autocomplete.innerHTML += `${i < 1 ? "" : "<br>"}${message.shift()}`
-                i++;
-            }, 10);
-        },100);
+        Game.finish(ret);
     }
 }
 
-function share() {
+function share() {false
     let day_1 = new Date('11/2/22').getTime();
     let today = new Date().getTime();
     let time_diff = today - day_1;
@@ -67,16 +46,15 @@ function share() {
 }
 
 function filter_options(k) {
-    if(done) return;
+    if(Game.done) return;
     let query = guess_input.value;
     if(query.trim() == "") {
-        // TODO: add error
         return autocomplete.innerHTML = "Type something to filter results!";
     }
     filtered = ISLANDS.map(x=>x.name).filter(x=>
         new RegExp(fmt(query))
             .test(fmt(x)));
     let filtered_cp = [...filtered]
-    filtered_str = filtered.length < 1 ? "No results" : `<b>${filtered_cp.shift()}</b>${filtered_cp.length < 1 ? "" : ", " + filtered_cp.join(`,`)}`
+    filtered_str = filtered.length < 1 ? "No results" : `<b>${filtered_cp.shift()}</b>${filtered_cp.length < 1 ? "" : ", " + filtered_cp.join(", ")}`
     autocomplete.innerHTML = filtered_str;
 }
