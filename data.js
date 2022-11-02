@@ -63,7 +63,45 @@ const ISLANDS = [
             type: "Territory"
         },
         territory: false
+    },
+    {
+        name: "Novaya Zemlya",
+        image: "NovayaZemlya.png",
+        continent: "Europe",
+        population: 2429,
+        lat: 75.1667,
+        long: 57.8333,
+        claims: {
+            countries: [ "ru" ],
+            type: "District"
+        },
+        territory: false
+    },
+    {
+        name: "Nauru",
+        image: "Nauru.png",
+        continent: "Oceania",
+        population: 10873,
+        lat: -0.5228,
+        long: 166.9315,
+        claims: {
+            countries: [ "nr" ],
+            type: "Independent"
+        },
+        territory: "nr"
+    },
+    {
+        name: "Socatra",
+        image: "Socatra.png",
+        population: 44120,
+        lat: 12.4634,
+        long: 53.8237,
+        claims: {
+            countries: [ "ye" ],
+            type: "Administered"
+        },
+        territory: false
     }
 ];
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Territory": "of"})[_];
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Territory": "of", "District": "of"})[_];
