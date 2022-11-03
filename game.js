@@ -1,6 +1,6 @@
 let island_img = document.querySelector(".island-img");
 let date_str = _ => (new Date).toString().split(/\d\d:\d\d:\d\d/)[0];
-let rng = new Math.seedrandom(date_str());
+let rng = new Math.seedrandom(date_str()); rng();
 function drandom() {
     return Math.floor(rng() * ISLANDS.length);
 }
