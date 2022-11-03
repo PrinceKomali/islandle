@@ -32,7 +32,7 @@ function submit_guess() {
 }
 
 function share() {false
-    let day_1 = new Date('11/2/22').getTime();
+    let day_1 = new Date('11/3/22').getTime();
     let today = new Date().getTime();
     let time_diff = today - day_1;
 

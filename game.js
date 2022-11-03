@@ -18,11 +18,10 @@ class Islandle {
 
         this.done = false;
         this.guesses = [];
-        this.index = drandom() % ISLANDS.length;
+        this.index = drandom();
         this.island = ISLANDS[this.index];
     }
     init () {
-        let Island = ISLANDS[drandom() % ISLANDS.length];
         for(let i = 0; i < 10; i++) {
             let item = localStorage.getItem(date_str().replace(/ /g,'') + `-G${i}`);
             if(item) {
@@ -33,7 +32,7 @@ class Islandle {
             else break;
         }
 
-        island_img.src = `images/${Island.image}`;
+        island_img.src = `images/${this.island.image}`;
         island_img.addEventListener("contextmenu", _ => _.preventDefault());
     }
     finish(ret) {
