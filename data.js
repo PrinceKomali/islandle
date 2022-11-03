@@ -186,9 +186,21 @@ const ISLANDS = [
             type: "Part"
         },
         territory: false
+    },
+    {
+        name: "Hispaniola",
+        image: "Hispaniola.png",
+        population: 22278000,
+        lat: 19.0019,
+        long: -71.5724,
+        claims: {
+            countries: [ "ht", "do" ],
+            type: "Shared"
+        },
+        territory: false
     }
 ];
 
 if(typeof process != "undefined") console.log(ISLANDS.length); // for reference
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Territory": "of", "District": "of", "Autonomous Region": "in"})[_];
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in"})[_];
