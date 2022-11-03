@@ -101,7 +101,94 @@ const ISLANDS = [
             type: "Administered"
         },
         territory: false
+    },
+    {
+        name: "South Georgia",
+        image: "SouthGeorgia.png",
+        population: 35,
+        lat: -54.4138,
+        long: -36.5827,
+        claims: {
+            countries: [ "gb" ],
+            type: "Territory"
+        },
+        territory: "gs"
+    },
+    {
+        name: "Bermuda",
+        image: "Bermuda.png",
+        population: 63867,
+        lat: 32.3078,
+        long: -64.7505,
+        claims: {
+            countries: [ "gb" ],
+            type: "Territory"
+        },
+        territory: "bm"
+    },
+    {
+        name: "Prince Edward Islands (ZA)",
+        image: "PrinceEdwardIslands.png",
+        population: 0,
+        lat: -46.88,
+        long: 37.75,
+        claims: {
+            countries: [ "za" ],
+            type: "Administered"
+        },
+        territory: false
+    },
+    //TODO: add sx
+    {
+        name: "Prince Edward Island (CA)",
+        image: "PrinceEdwardIsland.png",
+        population: 156947,
+        lat: 46.5107,
+        long: 63.4168,
+        claims: {
+            countries: [ "ca" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Madeira",
+        image: "Madeira.png",
+        population: 253945,
+        lat: 32.7607,
+        long: -16.9595,
+        claims: {
+            countries: [ "pt" ],
+            type: "Autonomous Region"
+        },
+        territory: false
+    },
+    {
+        name: "DiegoGarcia",
+        image: "DiegoGarcia.png",
+        population: 0,
+        lat: -7.3195,
+        long: 72.4229,
+        claims: {
+            countries: [ "gb", "mu" ],
+            type: "Disputed"
+        },
+        territory: "io"
+    },
+    {
+        name: "Andros",
+        image: "Andros.png",
+        population: 7490,
+        lat: 24.7064,
+        long: 78.0195,
+        claims: {
+            countries: [ "bs" ],
+            type: "Part"
+        },
+        territory: false
     }
 ];
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Territory": "of", "District": "of"})[_];
+if(typeof process != "undefined") console.log(ISLANDS.length); // for reference
+
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Territory": "of", "District": "of", "Autonomous Region": "in"})[_];
