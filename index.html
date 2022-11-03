@@ -14,7 +14,7 @@
     <meta name="description" content="Babelle, a country-guessing game with a city as first clue" />
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144" /> -->
-    <title>title</title>
+    <title>Islandle - Guess the Island!</title>
     <script defer="defer" src="data.js"></script>
     <script defer="defer" src="countries.js"></script>
     <script defer="defer" src="input.js"></script>
@@ -41,18 +41,69 @@
                 -->
 
                 <div class="h2p">
-                    <div class="ReactModal__Overlay ReactModal__Overlay--after-open" style="position: fixed; inset: 0px; background-color: rgba(255, 255, 255, 0.75);">
-                        <div class="ReactModal__Content ReactModal__Content--after-open flex justify-center h-full bg-slate-200 dark:bg-slate-800" tabindex="-1" role="dialog" aria-modal="true">
-                            <div class="relative w-full max-w-lg bg-white dark:bg-slate-900 dark:text-slate-100 text-sm overflow-auto px-2" style="z-index: 100;">
+                    <div class="ReactModal__Overlay ReactModal__Overlay--after-open"
+                        style="position: fixed; inset: 0px; background-color: rgba(255, 255, 255, 0.75);">
+                        <div class="ReactModal__Content ReactModal__Content--after-open flex justify-center h-full bg-slate-200 dark:bg-slate-800"
+                            tabindex="-1" role="dialog" aria-modal="true">
+                            <div class="relative w-full max-w-lg bg-white dark:bg-slate-900 dark:text-slate-100 text-sm overflow-auto px-2"
+                                style="z-index: 100;">
                                 <header class="border-b-2 border-gray-200 mb-3 flex">
                                     <h2 class="text-2xl font-bold uppercase tracking-wide text-center my-1 flex-auto">
-                                        How to play</h2><button onclick="close_h2p()" type="button"><span class="undefined"><img alt="❌" src="https://twemoji.maxcdn.com/2/72x72/274c.png" style="width: 1em; height: 1em; margin: 0px 0.05em 0px 0.1em; vertical-align: -0.1em;"></span></button>
+                                        How to play</h2><button onclick="close_h2p()" type="button"><span class="undefined"><img alt="❌"
+                                                src="https://twemoji.maxcdn.com/2/72x72/274c.png"
+                                                style="width: 1em; height: 1em; margin: 0px 0.05em 0px 0.1em; vertical-align: -0.1em;"></span></button>
                                 </header>
                                 <div class="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
-               
+                                    This is a game based on
+                                    <a target="_blank" href="https://worldle.teuteuf.fr/"><span class="font-bold">WOR<span
+                                                class="text-green-600">L</span>DLE</span></a>
+                                    and
+                                    <a target="_blank" href="https://babelle.terrylaire.fr/"><span class="font-bold">BABEL<span
+                                                class="text-orange-800">LE</span></span></a>.
+                                    However, instead of guessing the country, you must guess the island!
+                                    <br>
+                                    Every day there will be a new island, atoll, or set of islands to guess. You will be given
+                                    direction, distance, and relative population in order to guess the location in 10 tries.
                                 </div>
+                                <div class="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+                                    <b>Example</b>
+                                    <div class="guess_example col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded"><span
+                                            title="Guessed" class="island_name">Johnston Atoll</span><span title="Angle"
+                                            class="direction">⬇️</span><span title="Population" class="population"
+                                            style="font-weight: bold">&gt;</span><span title="Distance" class="countup">6,412.2km</span>
+                                    </div>
+                                    You guessed the <b>Johnston Atoll</b> (you are of course well informed about the USMOI) but
+                                    unfortunately it is quite far away from the target. Also, the target island has a larger population
+                                    than the uninhabited Johnston Atoll.
+                                    <div class="guess_example col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded"><span
+                                            title="Guessed" class="island_name">Sulawesi</span><span title="Angle"
+                                            class="direction">↘️</span><span title="Population" class="population"
+                                            style="font-weight: bold">&lt;</span><span title="Distance" class="countup">6,936.4km</span>
+                                    </div>
+                                    Your second guess was <b>Sulawesi</b>, which resulted in a similar distance but a different angle
+                                    and a population greater than the one of the target. Using your expert triangulation skills you can
+                                    determine that the answer is
+                                    <div class="guess_example col-span-7 h-8 bg-gray-200 dark:bg-slate-600 rounded"><span
+                                            title="Guessed" class="island_name">North Island</span><span title="Angle"
+                                            class="direction">🎉</span><span title="Population" class="population"
+                                            style="font-weight: bold">=</span><span title="Distance" class="countup">0km</span> </div>
+                                    Congratulations! You found half of New Zealand!
+                                </div>
+                                <div class="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+                                    <b>A new <span class="font-bold uppercase">Island<span class="island-text">le</span></span> will be
+                                        available every day!</b> (probably)
+                                </div>
+                                <div class="space-y-3 text-justify border-b-2 border-gray-200 pb-3 mb-3">
+                                    Questions? Join my <a class="map_link" href="https://discord.gg/QWCcXMe" target="_blank">discord
+                                        server</a>!
+                                        <br><br>
+                                        Full credit goes to <a class="underline" href="https://twitter.com/teuteuf" target="_blank" rel="noopener noreferrer">Teuteuf (@teuteuf)</a>, the creator of <a target="_blank" href="https://worldle.teuteuf.fr/"><span class="font-bold">WOR<span
+                                            class="text-green-600">L</span>DLE</span></a>, which I stole a lot of the HTML and CSS from because I <span style="text-decoration: line-through">am bad at</span> don't like React :)<br><br>
+                                        Made by <a class="underline" href="https://komali.dev">Prince Komali</a>
                                 
-                            
+                                    </div>
+                                
+                
                             </div>
                         </div>
                     </div>
