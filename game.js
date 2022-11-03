@@ -1,22 +1,8 @@
 let island_img = document.querySelector(".island-img");
 let date_str = _ => (new Date).toString().split(/\d\d:\d\d:\d\d/)[0];
+let rng = new Math.seedrandom(date_str());
 function drandom() {
-    //stackoverflow.com/q/521295
-    let str = window.btoa(date_str());
-    let h1 = 1779033703, h2 = 3144134277,
-        h3 = 1013904242, h4 = 2773480762;
-    for (let i = 0, k; i < str.length; i++) {
-        k = str.charCodeAt(i);
-        h1 = h2 ^ Math.imul(h1 ^ k, 597399067);
-        h2 = h3 ^ Math.imul(h2 ^ k, 2869860233);
-        h3 = h4 ^ Math.imul(h3 ^ k, 951274213);
-        h4 = h1 ^ Math.imul(h4 ^ k, 2716044179);
-    }
-    h1 = Math.imul(h3 ^ (h1 >>> 18), 597399067);
-    h2 = Math.imul(h4 ^ (h2 >>> 22), 2869860233);
-    h3 = Math.imul(h1 ^ (h3 >>> 17), 951274213);
-    h4 = Math.imul(h2 ^ (h4 >>> 19), 2716044179);
-    return (h1 ^ h2 ^ h3 ^ h4) >>> 0;
+    return Math.floor(rng() * ISLANDS.length);
 }
 
 function fmt(a) {
@@ -124,7 +110,7 @@ class Islandle {
                     guess_elem.innerHTML = 
                         `<span title="Guessed" class="island_name">${ guessed.name }</span>` +
                         `<span title="Angle" class="direction">${ guess_angle }</span>` + 
-                        `<span title="Population" class="population" style="font-weight: bold">${guessed.population == this.island.population ? "=" : guessed.population < this.island.population ? ">" : "&lt;"}</span>` +
+                        `<span title="Population" class="population" style="font-weight: bold">${guessed.population == this.island.population ? "=" : guessed.population < this.island.population ? "&lt;" : "&gt;"}</span>` +
                         `<span title="Distance" class="countup">${ Number(guess_distance.toFixed(1)).toLocaleString() }km</span> ${
                         ''   }`
 
