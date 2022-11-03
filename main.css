@@ -12,11 +12,14 @@
     margin-left: 0.1em;
     margin-right: 0.1em;
 }
+.guess_example {
+    margin-bottom: .5em !important;
+}
 .h2p {
     z-index:10;
     display: none;
 }
-.guess {
+.guess, .guess_example {
     display: flex;
     justify-content: center;
     align-content: center;

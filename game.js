@@ -65,7 +65,7 @@ class Islandle {
                 `${island.claims.type == "Independent" ? "Independent" : `${island.claims.type} ${type_grammar(island.claims.type)} ${
                     island.claims.countries.map(c=>`<img class="flag" height="1em" src="https://flagcdn.com/16x12/${c}.webp" />` + countries.find(x=>c == x.code.toLowerCase()).name).join(" and ")
                 }`}`,
-                `Population: <b>${island.population < 1 ? "Uninhabited" : island.population}</b>`,
+                `Population: <b>${island.population < 1 ? "Uninhabited" : island.population.toLocaleString()}</b>`,
                 `<a class="map_link" href="https://google.com/maps/search/?api=1&query=${island.lat}%2C${island.long}" target="_blank">Link</a>`
             
             ];
