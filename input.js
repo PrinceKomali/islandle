@@ -32,12 +32,12 @@ function submit_guess() {
 }
 
 function share() {false
-    let day_1 = new Date('11/3/22').getTime();
+    let day_1 = new Date('11/4/22').getTime();
     let today = new Date().getTime();
     let time_diff = today - day_1;
 
     navigator.clipboard.writeText(
-            `Islandle #${Math.round(time_diff / (1000 * 3600 * 24) + 1)} ${Game.guesses.length}/10\n` + 
+            `Islandle #${Math.floor(time_diff / (1000 * 3600 * 24) + 1)} ${Game.guesses.length}/10\n` + 
             Game.guesses.map(x=>`${x.share_data}`).join("\n") + "\n" + 
             "https://islandle.komali.dev"
     ).then(_ => share_btn.innerText = "Copied!")
@@ -55,6 +55,7 @@ function filter_options(k) {
         new RegExp(fmt(query))
             .test(fmt(x)));
     let filtered_cp = [...filtered]
+    if(filtered_cp.length > 10) filtered_cp = [...filtered_cp.slice(0, 11), "..."];
     filtered_str = filtered.length < 1 ? "No results" : `<b>${filtered_cp.shift()}</b>${filtered_cp.length < 1 ? "" : ", " + filtered_cp.join(", ")}`
     autocomplete.innerHTML = filtered_str;
 }

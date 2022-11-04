@@ -138,7 +138,19 @@ const ISLANDS = [
         },
         territory: false
     },
-    //TODO: add sx
+    {
+        name: "Saint Martin/Sint Maarten",
+        image: "SaintMartin.png",
+        population: 40204 + 42846, 
+        lat: 18.0632 ,
+        long: 63.0501,
+        claims: {
+            countries: [ "nl", "fr", ],
+            type: "Shared"
+        },
+        territory: "sx"
+
+    },
     {
         name: "Prince Edward Island (CA)",
         image: "PrinceEdwardIsland.png",
@@ -164,7 +176,7 @@ const ISLANDS = [
         territory: false
     },
     {
-        name: "DiegoGarcia",
+        name: "Diego Garcia",
         image: "DiegoGarcia.png",
         population: 0,
         lat: -7.3195,
@@ -198,9 +210,70 @@ const ISLANDS = [
             type: "Shared"
         },
         territory: false
+    },
+    {
+        name: "Tasmania",
+        image: "Tasmania.png",
+        population: 541071,
+        lat: -42.0409,
+        long: 146.8087,
+        claims: {
+            countries: [ "au" ],
+            type: "State"
+        },
+        territory: false
+
+    },
+    {
+        name: "Wake Island",
+        image: "WakeIsland.png",
+        population: 150,
+        lat: 19.2796,
+        long: 166.6499,
+        claims: {
+            countries: [ "us" ],
+            type: "Administered"
+        },
+        territory: false
+    },
+    {
+        name: "Bougainville Island",
+        image: "BougainvilleIsland.png",
+        population: 349358,
+        lat: -6.3754,
+        long: 155.3807,
+        claims: {
+            countries: [ "pg" ],
+            type: "Autonomous Region"
+        },
+        territory: false
+    },
+    {
+        name: "Crete",
+        image: "Crete.png",
+        population: 650000,
+        lat: 35.2401,
+        long: 24.8093,
+        claims: {
+            claims: [ "gr" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Saba",
+        image: "Saba.png",
+        population: 1933,
+        lat: 17.6355,
+        long: -63.2327,
+        claims: {
+            countries: [ "nl" ],
+            type: "Municipality"
+        }
+
     }
 ];
 
 if(typeof process != "undefined") console.log(ISLANDS.length); // for reference
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in"})[_];
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of"})[_];
