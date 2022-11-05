@@ -143,7 +143,7 @@ const ISLANDS = [
         image: "SaintMartin.png",
         population: 40204 + 42846, 
         lat: 18.0632 ,
-        long: 63.0501,
+        long: -63.0501,
         claims: {
             countries: [ "nl", "fr", ],
             type: "Shared"
@@ -156,7 +156,7 @@ const ISLANDS = [
         image: "PrinceEdwardIsland.png",
         population: 156947,
         lat: 46.5107,
-        long: 63.4168,
+        long: -63.4168,
         claims: {
             countries: [ "ca" ],
             type: "Part"
@@ -269,11 +269,59 @@ const ISLANDS = [
         claims: {
             countries: [ "nl" ],
             type: "Municipality"
-        }
-
+        },
+        territory: false
+    },
+    {
+        name: "Saint Barthélemy",
+        image: "SaintBarthelemy.png",
+        population: 9131,
+        lat: 17.9000,
+        long: -62.8333,
+        claims: {
+            countries: [ "fr" ],
+            type: "Overseas Collectivity"
+        },
+        territory: "bl"
+    },
+    {
+        name: "Sint Eustatius",
+        image: "SintEustatius.png",
+        population: 3183,
+        lat: 17.4890,
+        long: -62.9736,
+        claims: {
+            countries: [ "nl" ],
+            type: "Muncipality"
+        },
+        territory: false
+    },
+    {
+        name: "Long Island",
+        image: "LongIsland.png",
+        population: 8063232,
+        lat: 40.7891,
+        long: -73.1350,
+        claims: {
+            countries: [ "us" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Saint Thomas",
+        image: "SaintThomas.png",
+        population: 42261,
+        lat: 18.3381,
+        long: -64.8941,
+        claims: {
+            countries: [ "vi" ], // yes totally a country
+            type: "Part"
+        },
+        territory: false
     }
 ];
 
-if(typeof process != "undefined") console.log(ISLANDS.length); // for reference
+if(typeof process != "undefined") console.log(ISLANDS.sort((a,b)=>a.population - b.population)); // for reference
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of"})[_];
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of"})[_]; // Potentially the greatest function I've ever written
