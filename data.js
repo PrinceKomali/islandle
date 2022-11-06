@@ -334,7 +334,7 @@ const ISLANDS = [
     },
     {
         name: "Saint Croix",
-        image: null,
+        image: "SaintCroix.png",
         population: 41004,
         lat: 17.7246,
         long: -64.8348,
