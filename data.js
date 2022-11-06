@@ -319,9 +319,33 @@ const ISLANDS = [
             type: "Part"
         },
         territory: false
+    },
+    {
+        name: "Saint John",
+        image: "SaintJohn.png",
+        population: 20800,
+        lat: 45.2733,
+        long: -66.0633,
+        claims: {
+            countries: [ "vi" ], // yEs
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Saint Croix",
+        image: null,
+        population: 41004,
+        lat: 17.7246,
+        long: -64.8348,
+        claims: {
+            countries: [ "vi" ], // mOre
+            type: "Part"
+        },
+        territory: false
     }
 ];
 
-if(typeof process != "undefined") console.log(ISLANDS.sort((a,b)=>a.population - b.population)); // for reference
+if(typeof process != "undefined") console.log(ISLANDS.length); // for reference
 
 let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of"})[_]; // Potentially the greatest function I've ever written
