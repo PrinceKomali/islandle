@@ -356,6 +356,54 @@ const ISLANDS = [
         },
         territory: false
     },
+    {
+        name: "Puerto Rico",
+        image: "PuertoRico.png",
+        population: 2687049,
+        lat: 18.2208,
+        long: -66.5901,
+        claims: {
+            countries: [ "us" ],
+            type: "Territory"
+        },
+        territory: "pr"
+    },
+    {
+        name: "Niue",
+        image: "Niue.png",
+        population: 1620,
+        lat: -19.0544,
+        long: -169.8672,
+        claims: {
+            countries: [ "nz" ],
+            type: "Territory"
+        },
+        territory: "nu"
+    },
+    {
+        name: "Shetland",
+        image: "Shetland.png",
+        population: 22990,
+        lat: 60.3470,
+        long: -1.2357,
+        claims: {
+            countries: [ "gb-sct" ], // Using flagcdn for now
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Great Britain",
+        image: "GreatBritain.png",
+        population: 67508936,
+        lat: 55.3781,
+        long: -3.4360,
+        claims: {
+            countries: [ "gb" ],
+            type: "Part"
+        },
+        territory: false
+    }
 
 ];
 
