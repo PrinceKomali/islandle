@@ -46,7 +46,7 @@ const ISLANDS = [
         lat: -1.8479,
         long: 120.5279,
         claims: {
-            countries: [" id" ],
+            countries: ["id" ],
             type: "Part"
         },
         territory: false
@@ -343,7 +343,20 @@ const ISLANDS = [
             type: "Part"
         },
         territory: false
-    }
+    },
+    {
+        name: "Java",
+        image: "Java.png",
+        population: 148756685,
+        lat: -7.6145,
+        long: 110.7122,
+        claims: {
+            countries: [ "id" ],
+            type: "Part"
+        },
+        territory: false
+    },
+
 ];
 
 if(typeof process != "undefined") console.log(ISLANDS.length); // for reference

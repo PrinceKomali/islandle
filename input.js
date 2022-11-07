@@ -25,19 +25,19 @@ function submit_guess() {
     let ret = Game.guess(query);
     if(ret == Game.NOT_FOUND) return autocomplete.innerHTML = "Island not found!";
     if(ret == Game.ALREADY_GUESSED) return autocomplete.innerHTML = "You've already guessed this!";
-    let guesses_used_up = [...document.querySelectorAll(".guess")].filter(x=>x.innerText == "").length == 0;
+    let guesses_used_up = [...document.querySelectorAll(".guess")].filter(x=>x.innerText == "").length == 1;
     if(ret == Game.CORRECT || guesses_used_up) {
         Game.finish(ret);
     }
 }
 
 function share() {false
-    let day_1 = new Date('11/4/22').getTime();
+    let day_1 = new Date('11/7/22').getTime();
     let today = new Date().getTime();
     let time_diff = today - day_1;
 
     navigator.clipboard.writeText(
-            `Islandle #${Math.floor(time_diff / (1000 * 3600 * 24) + 1)} ${Game.guesses.length}/10\n` + 
+            `Islandle #${Math.floor(time_diff / (1000 * 3600 * 24) + 1)} ${Game.guesses[Game.guesses.length - 1] == Game.island ? Game.guesses.length : "X"}/10\n` + 
             Game.guesses.map(x=>`${x.share_data}`).join("\n") + "\n" + 
             "https://islandle.komali.dev"
     ).then(_ => share_btn.innerText = "Copied!")
