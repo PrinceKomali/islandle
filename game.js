@@ -1,8 +1,18 @@
 let island_img = document.querySelector(".island-img");
 let date_str = _ => (new Date).toString().split(/\d\d:\d\d:\d\d/)[0];
-let rng = new Math.seedrandom(date_str()); rng();
+let rng = new Math.seedrandom(date_str());
 function drandom() {
-    return Math.floor(rng() * ISLANDS.length);
+    let past = [];
+    for(i=0;i<15;i++) {
+        let past_date_str = (new Date(Date.now() - (i * 3600 * 24 * 1000))).toString().split(/\d\d:\d\d:\d\d/)[0]
+        let past_rng = new Math.seedrandom(past_date_str); 
+        let r = past_rng();
+        while(past.includes(Math.floor(r * ISLANDS.length))) r = past_rng();
+        past.push(Math.floor(r * ISLANDS.length))
+    }
+    let today_i = rng();
+    while(past.includes(Math.floor(today_i * ISLANDS.length))) today_i = rng();
+    return Math.floor(today_i * ISLANDS.length);
 }
 
 function fmt(a) {
