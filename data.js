@@ -2,7 +2,6 @@ const ISLANDS = [
     {
         name: "Midway Atoll",
         image: "MidwayAtoll.png",
-        continent: "Oceania",
         lat: 28.2072,
         long: -177.3735,
         population: 0,
@@ -15,7 +14,6 @@ const ISLANDS = [
     {
         name: "Johnston Atoll",
         image: "JohnstonAtoll.png",
-        continent: "Oceania",
         population: 0,
         lat: 16.7295,
         long: -169.5336,
@@ -28,7 +26,6 @@ const ISLANDS = [
     {
         name: "North Island",
         image: "NorthIsland.png",
-        continent: "Oceania",
         population: 3922000,
         lat: -39.2378,
         long: 175.6024,
@@ -41,7 +38,6 @@ const ISLANDS = [
     {
         name: "Sulawesi",
         image: "Sulawesi.png",
-        continent: "Asia",
         population: 19896951,
         lat: -1.8479,
         long: 120.5279,
@@ -54,7 +50,6 @@ const ISLANDS = [
     {
         name: "Tristan da Cunha",
         image: "TristanDaCunha.png",
-        continent: "Africa",
         population: 264,
         lat: -37.1052,
         long: -12.2777,
@@ -67,7 +62,6 @@ const ISLANDS = [
     {
         name: "Novaya Zemlya",
         image: "NovayaZemlya.png",
-        continent: "Europe",
         population: 2429,
         lat: 75.1667,
         long: 57.8333,
@@ -80,7 +74,6 @@ const ISLANDS = [
     {
         name: "Nauru",
         image: "Nauru.png",
-        continent: "Oceania",
         population: 10873,
         lat: -0.5228,
         long: 166.9315,
@@ -192,7 +185,7 @@ const ISLANDS = [
         image: "Andros.png",
         population: 7490,
         lat: 24.7064,
-        long: 78.0195,
+        long: -78.0195,
         claims: {
             countries: [ "bs" ],
             type: "Part"
@@ -324,8 +317,8 @@ const ISLANDS = [
         name: "Saint John",
         image: "SaintJohn.png",
         population: 20800,
-        lat: 45.2733,
-        long: -66.0633,
+        lat: 18.3368,
+        long: -64.7281,
         claims: {
             countries: [ "vi" ], // yEs
             type: "Part"
@@ -403,10 +396,97 @@ const ISLANDS = [
             type: "Part"
         },
         territory: false
+    },
+    {
+        name: "Kerguelen Islands",
+        image: "KerguelenIslands.png", // this took FOREVER
+        population: 130,
+        lat: -49.3948,
+        long: 69.3545,
+        claims: {
+            countries: [ "tf" ], // should probably rename this key
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Kiritimati",
+        image: "Kiritimati.png",
+        population: 6456,
+        lat: 1.8721,
+        long: -157.4278,
+        claims: {
+            countries: [ "ki" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Singapore",
+        image: "Singapore.png",
+        population: 5958256,
+        lat: 1.3521,
+        long: 103.8198,
+        claims: {
+            countries: [ "sg" ],
+            type: "Independent"
+        },
+        territory: "sg"
+    },
+    {
+        name: "Iceland",
+        image: "Iceland.png",
+        population: 376248,
+        lat: 64.9631,
+        long: -19.0208,
+        claims: {
+            countries: [ "is" ],
+            type: "Independent"
+        },
+        territory: "is"
+    },
+    {
+        name: "Saint Lucia",
+        image: "SaintLucia.png",
+        population: 185595,
+        lat: 13.9094,
+        long: -60.9789,
+        claims: {
+            countries: [ "lc" ],
+            type: "Independent"
+        },
+        territory: "lc"
+    },
+    {
+        name: "Mauritius",
+        image: "Mauritius.png",
+        population: 1276722,
+        lat: -20.3484,
+        long: 57.5522,
+        claims: {
+            countries: [ "mu" ],
+            type: "Independent"
+        },
+        territory: "mu"
+    },
+    {
+        name: "Mahé",
+        image: "Mahe.png",
+        population: 95000,
+        lat: -4.6827,
+        long: 55.4804,
+        claims: {
+            countries: [ "sc" ],
+            type: "Part"
+        },
+        territory: false
     }
 
 ];
 
-if(typeof process != "undefined") console.log(ISLANDS.length); // for reference
+if(typeof process != "undefined") {
+    if(process.argv[2] == "l") console.log(ISLANDS.map(x=>x.lat + "," + x.long).join("\n")); // for https://maps.co/gis/
+    else console.log(ISLANDS.length); // for reference
+}
 
 let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of"})[_]; // Potentially the greatest function I've ever written
