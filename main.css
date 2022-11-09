@@ -6,6 +6,9 @@
     margin-bottom: 2px;
     font-size: 12px;
 }
+.island-img {
+    max-height: 30em;
+}
 .flag {
     display: inline;
     vertical-align: -2px;
