@@ -832,6 +832,7 @@ footer a, .map_link {
     --tw-bg-opacity: 0;
     /* background-color: rgb(15 23 42/var(--tw-bg-opacity)) */
     background-image: url("/ocean.png");
+    background-size: 100% 100%;
 }
 
 .dark .dark\:bg-slate-800 {
