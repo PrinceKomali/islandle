@@ -16,7 +16,7 @@ function drandom() {
 }
 
 function fmt(a) {
-    return a.normalize("NFD").replace(/[\(\)\u0300-\u036f]/g, "").toLowerCase().replace(/ /g,'').trim();
+    return a.normalize("NFD").replace(/[\(\)'\u0300-\u036f]/g, "").toLowerCase().replace(/ /g,'').trim();
 }
 
 class Islandle {

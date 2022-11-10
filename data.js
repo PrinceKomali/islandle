@@ -480,6 +480,30 @@ const ISLANDS = [
             type: "Part"
         },
         territory: false
+    },
+    {
+        name: "Isla Grande de Tierra del Fuego",
+        image: "IslaGrandeDeTierraDelFuego.png", // This filename brings me pain
+        population: 133902,
+        lat: -54.0460,
+        long: -68.5722,
+        claims: {
+            countries: [ "ar", "cl" ],
+            type: "Shared"
+        },
+        territory: false
+    },
+    {
+        name: "Hawai'i",
+        image: "Hawaii.png",
+        population: 186738,
+        lat: 19.5429,
+        long: -155.6659, 
+        claims: {
+            countries: [ "us" ],
+            type: "Part"
+        },
+        territory: false
     }
 
 ];
