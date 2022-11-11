@@ -1,9 +1,12 @@
+let DAYS_NO_REPEAT = 30;
+
 let island_img = document.querySelector(".island-img");
 let date_str = _ => (new Date).toString().split(/\d\d:\d\d:\d\d/)[0];
 let rng = new Math.seedrandom(date_str());
+let recount = 0;
 function drandom() {
     let past = [];
-    for(i=0;i<15;i++) {
+    for(i = 0; i < DAYS_NO_REPEAT; i++) {
         let past_date_str = (new Date(Date.now() - (i * 3600 * 24 * 1000))).toString().split(/\d\d:\d\d:\d\d/)[0]
         let past_rng = new Math.seedrandom(past_date_str); 
         let r = past_rng();
@@ -11,7 +14,11 @@ function drandom() {
         past.push(Math.floor(r * ISLANDS.length))
     }
     let today_i = rng();
-    while(past.includes(Math.floor(today_i * ISLANDS.length))) today_i = rng();
+    while(past.includes(Math.floor(today_i * ISLANDS.length))) {
+        recount++;
+        today_i = rng();
+    }
+    console.log(recount)
     return Math.floor(today_i * ISLANDS.length);
 }
 

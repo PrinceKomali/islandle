@@ -504,6 +504,102 @@ const ISLANDS = [
             type: "Part"
         },
         territory: false
+    },
+    {
+        name: "Oahu",
+        image: "Oahu.png",
+        population:	1016508,
+        lat: 21.4389,
+        long: -158.0001,
+        claims: {
+            countries: [ "us" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Bouvet Island",
+        image: "BouvetIsland.png",
+        population: 0,
+        lat: -54.4208,
+        long: 3.3464,
+        claims: {
+            countries: [ "no" ],
+            type: "Territory"
+        },
+        territory: false, // Yes I know it technically is BV but it doesn't have it's own flag so it'd look weird
+    },
+    {
+        name: "Pohnpei",
+        image: "Pohnpei.png",
+        population: 35981,
+        lat: 6.8541,
+        long: 158.2624,
+        claims: {
+            countries: [ "fm" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Easter Island",
+        image: "EasterIsland.png",
+        population: 8601,
+        lat: -27.1127,
+        long: -109.3497,
+        claims: {
+            countries: [ "cl" ],
+            type: "District"
+        },
+        territory: false
+    },
+    {
+        name: "Cocos (Keeling) Islands",
+        image: "CocosKeelingIslands.png", // TODO: revisit this image
+        population: 544,
+        lat: -12.1642,
+        long: 96.8710,
+        claims: {
+            countries: [ "au" ],
+            type: "Territory"
+        },
+        territory: "cc"
+    },
+    {
+        name: "Montserrat",
+        image: "Montserrat.png",
+        population: 4999,
+        lat: 16.7494,
+        long: -62.1927,
+        claims: {
+            countries: [ "gb" ],
+            type: "Territory"
+        },
+        territory: "ms"
+    },
+    {
+        name: "Jersey",
+        image: "Jersey.png", //TODO: revisit this too (rocks look weird)
+        population: 103267,
+        lat: 49.2138,
+        long: -2.1358,
+        claims: {
+            countries: [ "gb" ],
+            type: "Crown Dependency"
+        },
+        territory: "je"
+    },
+    {
+        name: "Isle of Man",
+        image: "IsleofMan.png",
+        population: 86089,
+        lat: 54.2361,
+        long: -4.5481,
+        claims: {
+            countries: [ "gb" ],
+            type: "Crown Dependency"
+        },
+        territory: "im"
     }
 
 ];
@@ -513,4 +609,4 @@ if(typeof process != "undefined") {
     else console.log(ISLANDS.length); // for reference
 }
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of"})[_]; // Potentially the greatest function I've ever written
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of", "Crown Dependency": "of"})[_]; // Potentially the greatest function I've ever written
