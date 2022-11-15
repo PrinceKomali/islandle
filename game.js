@@ -38,7 +38,7 @@ class Islandle {
         this.index = drandom();
         this.island = ISLANDS[this.index];
     }
-    init () {
+    init() {
         for(let i = 0; i < 10; i++) {
             let item = localStorage.getItem(date_str().replace(/ /g,'') + `-G${i}`);
             if(item) {
@@ -48,7 +48,8 @@ class Islandle {
             }
             else break;
         }
-
+        for(i of this.island.claims.countries) (new Image).src = `https://flagcdn.com/16x12/${i}.webp`; //Preload images
+        if(this.island.territory) (new Image).src = `https://flagcdn.com/16x12/${this.island.territory}.webp` 
         island_img.src = `images/${this.island.image}`;
         island_img.addEventListener("contextmenu", _ => _.preventDefault());
     }
