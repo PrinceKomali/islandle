@@ -630,6 +630,42 @@ let ISLANDS_NO_IMG = [
             type: "Autonomous Region"
         },
         territory: false
+    },
+    {
+        name: "Heard Island",
+        image: false,
+        population: 0,
+        lat: -53.0818, 
+        long: 73.5042,
+        claims: {
+            countries: [ "hm" ],
+            type: "Territory"
+        },
+        territory: false // Again, yes I know HM is the code for it but it doesn't have a distinct flag 
+    },
+    {
+        name: "Jan Mayen",
+        image: false, // Google earth isn't cooperating :(
+        population: 0,
+        lat: 71.0318,
+        long: -8.2920,
+        claims: {
+            countries: [ "no" ],
+            type: "Administered"
+        },
+        territory: false
+    }, // May or may not add Svalbard, haven't decided
+    {
+        name: "Hainan",
+        image: false,
+        population: 10081232,
+        lat: 20.0200,
+        long: 110.3486,
+        claims: {
+            countries: [ "cn" ],
+            type: "Province"
+        },
+        territory: false
     }
 ];
 
@@ -643,4 +679,4 @@ if(typeof process != "undefined") {
     else console.log(ISLANDS.length); // for reference
 }
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of", "Crown Dependency": "of", "Constitute Country": "of", "Special Administrative Region": "in"})[_]; // Potentially the greatest function I've ever writte
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Province": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of", "Crown Dependency": "of", "Constitute Country": "of", "Special Administrative Region": "in"})[_]; // Potentially the greatest function I've ever writte
