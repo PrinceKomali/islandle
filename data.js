@@ -1,3 +1,5 @@
+let ALL_ISLANDS; // ???
+
 const ISLANDS = [
     {
         name: "Midway Atoll",
@@ -603,10 +605,42 @@ const ISLANDS = [
     }
 
 ];
+// Work on adding images to these
+let ISLANDS_NO_IMG = [
+    {
+        name: "Christmas Island",
+        image: false,
+        population: 1843,
+        lat: -10.4475,
+        long: 105.6904,
+        claims: {
+            countries: [ "au" ],
+            type: "Territory"
+        },
+        territory: "cx"
+    },
+    {
+        name: "Rodrigues",
+        image: false,
+        population: 41669,
+        lat: -19.7245,
+        long: 63.4272,
+        claims: {
+            countries: [ "mu" ],
+            type: "Autonomous Region"
+        },
+        territory: false
+    }
+];
+
+// generator.py
+ISLANDS_NO_IMG = [...ISLANDS_NO_IMG, {"name": "Taiwan", "image": false, "population": 23816775, "lat": 23.5, "long": 121.0, "claims": {"countries": ["tw"], "type": "Independent"}, "territory": "tw"}, {"name": "Sri Lanka", "image": false, "population": 21413249, "lat": 7.0, "long": 81.0, "claims": {"countries": ["lk"], "type": "Independent"}, "territory": "lk"}, {"name": "Macau", "image": false, "population": 649335, "lat": 22.16666666, "long": 113.55, "claims": {"countries": ["cn"], "type": "Special Administrative Region"}, "territory": "mo"}, {"name": "Ireland", "image": false, "population": 4937786, "lat": 53.0, "long": -8.0, "claims": {"countries": ["ie"], "type": "Independent"}, "territory": "ie"}, {"name": "Jamaica", "image": false, "population": 2961167, "lat": 18.25, "long": -77.5, "claims": {"countries": ["jm"], "type": "Independent"}, "territory": "jm"}, {"name": "Bahrain", "image": false, "population": 1701575, "lat": 26.0, "long": 50.55, "claims": {"countries": ["bh"], "type": "Independent"}, "territory": "bh"}, {"name": "Cyprus", "image": false, "population": 1207359, "lat": 35.0, "long": 33.0, "claims": {"countries": ["cy"], "type": "Independent"}, "territory": "cy"}, {"name": "R\u00e9union", "image": false, "population": 895312, "lat": -21.15, "long": 55.5, "claims": {"countries": ["fr"], "type": "Dependency"}, "territory": "re"}, {"name": "Malta", "image": false, "population": 441543, "lat": 35.9375, "long": 14.3754, "claims": {"countries": ["mt"], "type": "Independent"}, "territory": "mt"}, {"name": "Guadeloupe", "image": false, "population": 400124, "lat": 16.25, "long": -61.583333, "claims": {"countries": ["fr"], "type": "Dependency"}, "territory": "gp"}, {"name": "Martinique", "image": false, "population": 375265, "lat": 14.666667, "long": -61.0, "claims": {"countries": ["fr"], "type": "Dependency"}, "territory": "mq"}, {"name": "Barbados", "image": false, "population": 287375, "lat": 13.16666666, "long": -59.53333333, "claims": {"countries": ["bb"], "type": "Independent"}, "territory": "bb"}, {"name": "Guam", "image": false, "population": 168775, "lat": 13.46666666, "long": 144.78333333, "claims": {"countries": ["us"], "type": "Administered"}, "territory": "gu"}, {"name": "Grenada", "image": false, "population": 112523, "lat": 12.11666666, "long": -61.66666666, "claims": {"countries": ["gd"], "type": "Independent"}, "territory": "gd"}, {"name": "Aruba", "image": false, "population": 106766, "lat": 12.5, "long": -69.96666666, "claims": {"countries": ["nl"], "type": "Constitute Country"}, "territory": "aw"}, {"name": "Dominica", "image": false, "population": 71986, "lat": 15.41666666, "long": -61.33333333, "claims": {"countries": ["dm"], "type": "Independent"}, "territory": "dm"}, {"name": "Anguilla", "image": false, "population": 15003, "lat": 18.25, "long": -63.16666666, "claims": {"countries": ["gb"], "type": "Territory"}, "territory": "ai"}, {"name": "Hong Kong", "image": false, "population": 7496981, "lat": 22.267, "long": 114.188, "claims": {"countries": ["cn"], "type": "Special Administrative Region"}, "territory": "hk"}]
+
+ALL_ISLANDS = [...ISLANDS, ...ISLANDS_NO_IMG]
 
 if(typeof process != "undefined") {
-    if(process.argv[2] == "l") console.log(ISLANDS.map(x=>x.lat + "," + x.long).join("\n")); // for https://maps.co/gis/
+    if(process.argv[2] == "l") console.log((process.argv.includes("a") ? ALL_ISLANDS : ISLANDS).map(x=>x.lat + "," + x.long).join("\n")); // for https://maps.co/gis/
     else console.log(ISLANDS.length); // for reference
 }
 
-let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of", "Crown Dependency": "of"})[_]; // Potentially the greatest function I've ever written
+let type_grammar = _ => ({"Administered": "by", "Part": "of", "Owned": "by", "Disputed": "between", "Shared": "between", "Territory": "of", "District": "of", "Autonomous Region": "in", "State": "of", "Municipality": "of", "Overseas Collectivity": "of", "Crown Dependency": "of", "Constitute Country": "of", "Special Administrative Region": "in"})[_]; // Potentially the greatest function I've ever writte

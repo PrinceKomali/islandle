@@ -51,7 +51,7 @@ function filter_options(k) {
     if(query.trim() == "") {
         return autocomplete.innerHTML = "Type something to filter results!";
     }
-    filtered = ISLANDS.map(x=>x.name).filter(x=>
+    filtered = ALL_ISLANDS.map(x=>x.name).filter(x=>
         new RegExp(fmt(query))
             .test(fmt(x)));
     let filtered_cp = [...filtered]

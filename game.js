@@ -18,7 +18,7 @@ function drandom() {
         recount++;
         today_i = rng();
     }
-    console.log(recount)
+    console.log("Duplicate iterations: " + recount);
     return Math.floor(today_i * ISLANDS.length);
 }
 
@@ -139,7 +139,7 @@ class Islandle {
         else return this.INCORRECT;
     }
     guess(query) {
-        let found = ISLANDS.find(x=>fmt(x.name) == fmt(query));
+        let found = ALL_ISLANDS.find(x=>fmt(x.name) == fmt(query));
         if (!found) return this.NOT_FOUND;
         if (this.guesses.includes(found)) return this.ALREADY_GUESSED;
 
