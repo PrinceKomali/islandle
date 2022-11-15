@@ -2,7 +2,7 @@
 import requests
 import json
 import re
-c = "twlkmoiejmbhcyremtgpmqbbgugdawdmaihk"
+c = "twlkmoiejmbhcyremtgpmqbbgugdawdmaihkcu"
 # add sh, cx, cw, bq manually
 
 def fetch(u, j = False):
