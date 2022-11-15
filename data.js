@@ -171,7 +171,7 @@ const ISLANDS = [
     {
         name: "Diego Garcia",
         image: "DiegoGarcia.png",
-        population: 0,
+        population: 4239,
         lat: -7.3195,
         long: 72.4229,
         claims: {
