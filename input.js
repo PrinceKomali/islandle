@@ -6,6 +6,19 @@ let autocomplete = document.querySelector(".autocomplete");
 let filtered = [];
 let filtered_str = "";
 
+function fix_sizes() {
+    let names = [...document.querySelectorAll(".island_name")];
+    for(i of names) {
+        let s = 20;
+        while((s/2) * i.innerText.length > i.clientWidth) {
+            s-=0.5;
+            i.style.fontSize = s + "px";
+        }
+    }
+}
+
+window.addEventListener("resize", fix_sizes);
+
 guess_input.addEventListener("keydown", k => {
     if(k.key == "Tab") {
         k.preventDefault();
