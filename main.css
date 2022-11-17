@@ -37,6 +37,8 @@
     align-items: center;
     border: 2px #fff solid;
     border-radius: .25em;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .squares {
     width: 80%;
