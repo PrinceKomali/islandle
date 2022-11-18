@@ -2,24 +2,18 @@ let DAYS_NO_REPEAT = 30;
 
 let island_img = document.querySelector(".island-img");
 let date_str = _ => (new Date).toString().split(/\d\d:\d\d:\d\d/)[0];
-let rng = new Math.seedrandom(date_str());
-let recount = 0;
+let date_int = parseInt((d=new Date).getMonth() + d.toString().match(/\d?\d \d\d\d\d/)[0].replace(" ",''));
+let rng = new Math.seedrandom("shuffle");
+
 function drandom() {
-    let past = [];
-    for(i = 0; i < DAYS_NO_REPEAT; i++) {
-        let past_date_str = (new Date(Date.now() - (i * 3600 * 24 * 1000))).toString().split(/\d\d:\d\d:\d\d/)[0]
-        let past_rng = new Math.seedrandom(past_date_str); 
-        let r = past_rng();
-        while(past.includes(Math.floor(r * ISLANDS.length))) r = past_rng();
-        past.push(Math.floor(r * ISLANDS.length))
+    // this works better than the old method and I don't like that :(
+    let array = ISLANDS.map((_,i) => i);
+    for (let i = array.length - 1; i > 0; i--) { // https://stackoverflow.com/q/2450954/
+        const j = Math.floor(rng() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
-    let today_i = rng();
-    while(past.includes(Math.floor(today_i * ISLANDS.length))) {
-        recount++;
-        today_i = rng();
-    }
-    console.log("Duplicate iterations: " + recount);
-    return Math.floor(today_i * ISLANDS.length);
+    return array[date_int % array.length]
+    
 }
 
 function fmt(a) {
@@ -48,7 +42,7 @@ class Islandle {
             }
             else break;
         }
-        for(i of this.island.claims.countries) (new Image).src = `https://flagcdn.com/16x12/${i}.webp`; //Preload images
+        for(let i of this.island.claims.countries) (new Image).src = `https://flagcdn.com/16x12/${i}.webp`; //Preload images
         if(this.island.territory) (new Image).src = `https://flagcdn.com/16x12/${this.island.territory}.webp` 
         island_img.src = `images/${this.island.image}`;
         island_img.addEventListener("contextmenu", _ => _.preventDefault());
