@@ -2,7 +2,7 @@ let DAYS_NO_REPEAT = 30;
 
 let island_img = document.querySelector(".island-img");
 let date_str = _ => (new Date).toString().split(/\d\d:\d\d:\d\d/)[0];
-let date_int = parseInt((d=new Date).getMonth() + d.toString().match(/\d?\d \d\d\d\d/)[0].replace(" ",''));
+let date_int = parseInt((d=new Date).getFullYear().toString() + d.getMonth() + d.toString().split(" ")[2]);
 let rng = new Math.seedrandom("shuffle");
 
 function drandom() {
