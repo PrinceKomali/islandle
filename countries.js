@@ -999,5 +999,10 @@ let countries = [
   {
     "code": "CO",
     "name": "Colombia"
+  },
+
+  {
+    "code": "GB-SCT",
+    "name": "Scotland"
   }
 ]

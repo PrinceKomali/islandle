@@ -124,7 +124,7 @@ class Islandle {
                         `<span title="Population" class="population" style="font-weight: bold">${guessed.population == this.island.population ? "=" : guessed.population < this.island.population ? "&lt;" : "&gt;"}</span>` +
                         `<span title="Distance" class="countup">${ Number(guess_distance.toFixed(1)).toLocaleString() }km</span> ${
                         ''   }`
-
+                    fix_sizes();
                 }, 500)
             }
         }, 10)
