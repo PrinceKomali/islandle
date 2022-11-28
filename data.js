@@ -697,7 +697,7 @@ const ISLANDS = [
         long: -68.9900,
         claims: {
             countries: [ "nl" ],
-            type: "Municipality"
+            type: "Constitute Country"
         },
         territory: "cw"
     },
