@@ -926,7 +926,7 @@ let countries = [
   },
   {
     "code": "FM",
-    "name": "Micronesia"
+    "name": "Federated States of Micronesia"
   },
   {
     "code": "ZA",
