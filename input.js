@@ -64,9 +64,14 @@ function filter_options(k) {
     if(query.trim() == "") {
         return autocomplete.innerHTML = "Type something to filter results!";
     }
-    filtered = ALL_ISLANDS.map(x=>x.name).filter(x=>
-        new RegExp(fmt(query))
-            .test(fmt(x)));
+    let grep;
+    try {
+        grep = new RegExp(fmt(query))
+    }
+    catch(e) {
+        return autocomplete.innerHTML = "Invalid Regex: " + e.message.replace(/Invalid regular expression:[^:]*: /,'');
+    }
+    filtered = ALL_ISLANDS.map(x=>x.name).filter(x=>grep.test(fmt(x)));
     let filtered_cp = [...filtered]
     if(filtered_cp.length > 10) filtered_cp = [...filtered_cp.slice(0, 11), "..."];
     filtered_str = filtered.length < 1 ? "No results" : `<b>${filtered_cp.shift()}</b>${filtered_cp.length < 1 ? "" : ", " + filtered_cp.join(", ")}`

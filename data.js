@@ -226,8 +226,8 @@ const ISLANDS = [
         lat: 19.2796,
         long: 166.6499,
         claims: {
-            countries: [ "us" ],
-            type: "Administered"
+            countries: [ "us", "mh" ],
+            type: "Disputed"
         },
         territory: false
     },
