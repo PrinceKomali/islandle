@@ -641,7 +641,7 @@ const ISLANDS = [
     },
     {
         name: "Hainan",
-        image: false,
+        image: "Hainan.png",
         population: 10081232,
         lat: 20.0200,
         long: 110.3486,
