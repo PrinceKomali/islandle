@@ -250,7 +250,7 @@ const ISLANDS = [
         lat: 35.2401,
         long: 24.8093,
         claims: {
-            claims: [ "gr" ],
+            countries: [ "gr" ],
             type: "Part"
         },
         territory: false
@@ -657,7 +657,7 @@ const ISLANDS = [
         population: 288212,
         lat: 13.1939,
         long: -59.5432,
-        clams: {
+        claims: {
             countries: [ "bb" ],
             type: "Independent"
         },
