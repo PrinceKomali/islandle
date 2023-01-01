@@ -11,7 +11,8 @@ const ISLANDS = [
             countries: [ "us" ],
             type: "Administered",
         },
-        territory: false
+        territory: false,
+        water: "tropical"
     },
     {
         name: "Johnston Atoll",
@@ -71,7 +72,8 @@ const ISLANDS = [
             countries: [ "ru" ],
             type: "District"
         },
-        territory: false
+        territory: false,
+        water: "deep"
     },
     {
         name: "Nauru",
@@ -107,7 +109,8 @@ const ISLANDS = [
             countries: [ "gb" ],
             type: "Territory"
         },
-        territory: "gs"
+        territory: "gs",
+        water: "deep"
     },
     {
         name: "Bermuda",
@@ -143,8 +146,8 @@ const ISLANDS = [
             countries: [ "nl", "fr", ],
             type: "Shared"
         },
-        territory: "sx"
-
+        territory: "sx",
+        water: "tropical"
     },
     {
         name: "Prince Edward Island (CA)",
@@ -156,7 +159,8 @@ const ISLANDS = [
             countries: [ "ca" ],
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "green"
     },
     {
         name: "Madeira",
@@ -192,7 +196,8 @@ const ISLANDS = [
             countries: [ "bs" ],
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "tropical"
     },
     {
         name: "Hispaniola",
@@ -229,7 +234,8 @@ const ISLANDS = [
             countries: [ "us", "mh" ],
             type: "Disputed"
         },
-        territory: false
+        territory: false,
+        water: "deep"
     },
     {
         name: "Bougainville Island",
@@ -250,7 +256,7 @@ const ISLANDS = [
         lat: 35.2401,
         long: 24.8093,
         claims: {
-            claims: [ "gr" ],
+            countries: [ "gr" ],
             type: "Part"
         },
         territory: false
@@ -277,7 +283,8 @@ const ISLANDS = [
             countries: [ "fr" ],
             type: "Overseas Collectivity"
         },
-        territory: "bl"
+        territory: "bl",
+        water: "tropical"
     },
     {
         name: "Sint Eustatius",
@@ -301,7 +308,8 @@ const ISLANDS = [
             countries: [ "us" ],
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "green"
     },
     {
         name: "Saint Thomas",
@@ -337,7 +345,8 @@ const ISLANDS = [
             countries: [ "vi" ], // mOre
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "tropical"
     },
     {
         name: "Java",
@@ -385,7 +394,8 @@ const ISLANDS = [
             countries: [ "gb-sct" ], // Using flagcdn for now
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "deep"
     },
     {
         name: "Great Britain",
@@ -409,7 +419,8 @@ const ISLANDS = [
             countries: [ "tf" ], // should probably rename this key
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "deep"
     },
     {
         name: "Kiritimati",
@@ -433,7 +444,8 @@ const ISLANDS = [
             countries: [ "sg" ],
             type: "Independent"
         },
-        territory: "sg"
+        territory: "sg",
+        water: "green"
     },
     {
         name: "Iceland",
@@ -457,7 +469,8 @@ const ISLANDS = [
             countries: [ "lc" ],
             type: "Independent"
         },
-        territory: "lc"
+        territory: "lc",
+        water: "tropical"
     },
     {
         name: "Mauritius",
@@ -481,7 +494,8 @@ const ISLANDS = [
             countries: [ "sc" ],
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "tropical"
     },
     {
         name: "Isla Grande de Tierra del Fuego",
@@ -493,7 +507,8 @@ const ISLANDS = [
             countries: [ "ar", "cl" ],
             type: "Shared"
         },
-        territory: false
+        territory: false,
+        water: "deep"
     },
     {
         name: "Hawai'i",
@@ -530,6 +545,7 @@ const ISLANDS = [
             type: "Territory"
         },
         territory: false, // Yes I know it technically is BV but it doesn't have it's own flag so it'd look weird
+        water: "deep"
     },
     {
         name: "Pohnpei",
@@ -593,7 +609,7 @@ const ISLANDS = [
     },
     {
         name: "Isle of Man",
-        image: "IsleofMan.png",
+        image: "IsleOfMan.png",
         population: 86089,
         lat: 54.2361,
         long: -4.5481,
@@ -637,7 +653,8 @@ const ISLANDS = [
             countries: [ "hm" ],
             type: "Territory"
         },
-        territory: false // Again, yes I know HM is the code for it but it doesn't have a distinct flag 
+        territory: false, // Again, yes I know HM is the code for it but it doesn't have a distinct flag 
+        water: "deep"
     },
     {
         name: "Hainan",
@@ -657,11 +674,12 @@ const ISLANDS = [
         population: 288212,
         lat: 13.1939,
         long: -59.5432,
-        clams: {
+        claims: {
             countries: [ "bb" ],
             type: "Independent"
         },
-        territory: "bb"
+        territory: "bb",
+        water: "tropical"
     },
     {
         name: "Antigua",
@@ -673,7 +691,8 @@ const ISLANDS = [
             countries: [ "ag" ],
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "tropical"
 
     },
     {
@@ -686,7 +705,8 @@ const ISLANDS = [
             countries: [ "ag" ],
             type: "Part"
         },
-        territory: false
+        territory: false,
+        water: "tropical"
         
     },
     {
@@ -748,13 +768,111 @@ const ISLANDS = [
             type: "Part"
         } ,
         territory: false
+    },
+    {
+        name: "Mayotte",
+        image: "Mayotte.png",
+        population: 289164,
+        lat: -12.8275,
+        long: 45.1662,
+        claims: {
+            countries: [ "fr" ],
+            type: "Overseas Collectivity"
+        },
+        territory: "yt"
+    },
+    {
+        name: "Canary Islands",
+        image: "CanaryIslands.png",
+        population: 2252465,
+        lat: 28.2916,
+        long: -16.6291,
+        claims: {
+            countries: [ "es" ],
+            type: "Autonomous Region"
+        },
+        territory: false // even though it has its own country code... ??? why
+    },
+    {
+        name: "Açores",
+        image: "Acores.png",
+        population: 236440,
+        lat: 37.7412,
+        long: -25.6756,
+        claims: {
+            countries: [ "pt" ],
+            type: "Autonomous Region"
+        },
+        territory: false
+    },
+    {
+        name: "Island of Montreal",
+        image: "IslandOfMontreal.png",
+        population: 4277000,
+        lat: 45.5126,
+        long: -73.6802,
+        claims: {
+            countries: [ "ca-qc" ], // flagpedia SHOULD have this flag (but it doesn't so i had to make it from scratch >:I ) 
+            type: "Part"
+        },
+        territory: false,
+        water: "green"
+    },
+    {
+        name: "Galápagos Islands",
+        image: "GalapagosIslands.png",
+        population: 25000, // TODO: update with better number
+        lat: -0.9538,
+        long: -90.9656,
+        claims: {
+            countries: [ "ec" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Kure Atoll",
+        image: "KureyAtoll.png",
+        population: 0,
+        lat: 28.3925,
+        long: -178.2936,
+        claims: {
+            countries: [ "us" ],
+            type: "Part",
+        },
+        territory: false,
+        water: "tropical"
+    },
+    {
+        name: "Palmyra Atoll",
+        image: "PalmyraAtoll.png",
+        population: 4,
+        lat: 5.8885,
+        long: -162.0787,
+        claims: {
+            countries: [ "us" ],
+            type: "Administered"
+        },
+        territory: false
+    },
+    {
+        name: "Funafuti",
+        image: "Funafuti.png",
+        population: 7348,
+        lat: -8.5211,
+        long: 179.1962,
+        claims: {
+            countries: "tv",
+            type: "Part"
+        },
+        territory: false
     }
 ];
 // Work on adding images to these
 let ISLANDS_NO_IMG = [
     {
         name: "Jan Mayen",
-        image: false, // Google earth isn't cooperating :(
+        image: false, // why is it GREEN
         population: 0,
         lat: 71.0318,
         long: -8.2920,
@@ -762,11 +880,12 @@ let ISLANDS_NO_IMG = [
             countries: [ "no" ],
             type: "Administered"
         },
-        territory: false
-    }, // May or may not add Svalbard, haven't decided
+        territory: false,
+        water: "deep"
+    }, 
     {
         name: "Ascension Island",
-        image: false, // google earth WHY
+        image: false, // rendering error?
         population: 880,
         lat: -7.9467,
         long: -14.3559,
@@ -775,6 +894,31 @@ let ISLANDS_NO_IMG = [
             type: "Territory"
         },
         territory: false
+    },
+    {
+        name: "Lord Howe Island",
+        image: false, // big yellow spot 
+        population: 382,
+        lat: -31.5553,
+        long: 159.0821,
+        claims: {
+            countries: [ "au" ],
+            type: "Part"
+        },
+        territory: false
+    },
+    {
+        name: "Faroe Islands",
+        image: false, // the HECK is going on here
+        population: 49315,
+        lat: 61.8926,
+        long: -6.9118,
+        claims: {
+            countries: [ "dk" ],
+            type: "Territory"
+        },
+        territory: "fo",
+        water: "deep"
     }
     
 ];
