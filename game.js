@@ -42,10 +42,11 @@ class Islandle {
             }
             else break;
         }
-        for(let i of this.island.claims.countries) (new Image).src = `https://flagcdn.com/16x12/${i}.webp`; //Preload images
+        for(let i of this.island.claims.countries) (new Image).src = i == "ca-qc" ? "https://komali.dev/bin/ca-qc.png" : `https://flagcdn.com/16x12/${i}.webp`; //Preload images
         if(this.island.territory) (new Image).src = `https://flagcdn.com/16x12/${this.island.territory}.webp` 
         island_img.src = `images/${this.island.image}`;
         island_img.addEventListener("contextmenu", _ => _.preventDefault());
+        if(this.island.water) document.body.style.backgroundImage = `url(/waters/${this.island.water}.png)`
     }
     finish(ret) {
         this.done = true;
@@ -60,7 +61,7 @@ class Islandle {
             let message = [
                 `Answer: <b>${island.territory ? `<img class="flag" height="1em" src="https://flagcdn.com/16x12/${island.territory}.webp" />&nbsp;` : ""}${island.name}</b>`,
                 `${island.claims.type == "Independent" ? "Independent" : `${island.claims.type} ${type_grammar(island.claims.type)} ${
-                    island.claims.countries.map(c=>`<img class="flag" height="1em" src="https://flagcdn.com/16x12/${c}.webp" /> ` + countries.find(x=>c == x.code.toLowerCase()).name).join(" and ")
+                    island.claims.countries.map(c=>`<img class="flag" src="${c == "ca-qc" ? "https://komali.dev/bin/ca-qc.png" : `https://flagcdn.com/16x12/${c}.webp`}" /> ` + countries.find(x=>c == x.code.toLowerCase()).name).join(" and ")
                 }`}`,
                 `Population: <b>${island.population < 1 ? "Uninhabited" : island.population.toLocaleString()}</b>`,
                 `<a class="map_link" href="https://google.com/maps/search/?api=1&query=${island.lat}%2C${island.long}" target="_blank">Link</a>`
