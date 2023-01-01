@@ -6,6 +6,7 @@ let date_int = parseInt((d=new Date).getFullYear().toString() + d.getMonth() + d
 let rng = new Math.seedrandom("shuffle");
 
 function drandom() {
+    return ISLANDS.length - 1
     // this works better than the old method and I don't like that :(
     let array = ISLANDS.map((_,i) => i);
     for (let i = array.length - 1; i > 0; i--) { // https://stackoverflow.com/q/2450954/

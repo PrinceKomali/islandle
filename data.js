@@ -862,7 +862,7 @@ const ISLANDS = [
         lat: -8.5211,
         long: 179.1962,
         claims: {
-            countries: "tv",
+            countries: [ "tv" ],
             type: "Part"
         },
         territory: false
