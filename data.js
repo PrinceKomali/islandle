@@ -832,7 +832,7 @@ const ISLANDS = [
     },
     {
         name: "Kure Atoll",
-        image: "KureyAtoll.png",
+        image: "KureAtoll.png",
         population: 0,
         lat: 28.3925,
         long: -178.2936,
